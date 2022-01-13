@@ -21,7 +21,7 @@ jobs:
         node-version: lts/*
     - run: npx npm-check-updates -u
     
-    - name: commmit
+    - name: commit
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: npm-check-updates
