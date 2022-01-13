@@ -14,15 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: npm-check-updates
       uses: actions/setup-node@v2
       with:
         node-version: lts/*
     - run: npx npm-check-updates -u
     
-    - uses: stefanzweifel/git-auto-commit-action@v4
+    - name: commmit
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: npm-check-updates
         file_pattern: package.json
-      if: steps.auto-commit-action.outputs.changes_detected == 'true'
-
