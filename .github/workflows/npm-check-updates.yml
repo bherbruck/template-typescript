@@ -19,4 +19,10 @@ jobs:
       with:
         node-version: lts/*
     - run: npx npm-check-updates -u
-    - run: git commit -m "npm-check-updates" package.json
+    
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: npm-check-updates
+        file_pattern: package.json
+      if: steps.auto-commit-action.outputs.changes_detected == 'true'
+
