@@ -1,3 +1,8 @@
-import { expect, test, describe } from '@jest/globals'
+import { describe, it } from 'mocha'
+import { expect } from 'chai'
 
-test('placeholder', () => expect(true).toBe(true))
+describe('placeholder', () => {
+  it('returns true', () => {
+    expect(true).to.equal(true)
+  })
+})
